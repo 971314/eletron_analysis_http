@@ -1,0 +1,47 @@
+{
+  "name": "analysis",
+  "version": "1.0.1",
+  "main": "main.js",
+  "description": "",
+  "author": "Matt Haggard",
+  "scripts": {
+    "publish": "electron-builder -p always"
+  },
+  "devDependencies": {
+    "electron": "^30.1.0",
+    "electron-builder": "^22.11.7",
+    "electron-notarize": "^1.1.1"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.1",
+    "electron-updater": "^4.3.9"
+  },
+  "build": {
+    "appId": "com.github.971314.analysis",
+    "productName": "analysis",
+    "afterSign": "./build/notarize.js",
+    "copyright": "1.0.1",
+    "mac": {
+      "category": "your.app.category.type"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "category": "your.app.category.type",
+      "target": "AppImage"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "971314",
+        "repo": "analysis",
+        "releaseType": "release"
+      }
+    ]
+  }
+}
