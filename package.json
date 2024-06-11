@@ -29,7 +29,8 @@
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true
     },
     "linux": {
       "category": "your.app.category.type",
@@ -37,10 +38,8 @@
     },
     "publish": [
       {
-        "provider": "github",
-        "owner": "971314",
-        "repo": "analysis",
-        "releaseType": "release"
+        "provider": "generic",
+        "url": "http://127.0.0.1:8080/"
       }
     ]
   }
